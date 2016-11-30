@@ -1,0 +1,60 @@
+
+  <link rel="stylesheet" href="css/style.css">
+
+<div >
+<nav class="dropdownmenu">
+  <ul>
+   <li><a ui-sref="inicio">INICIO</a></li>
+    <li><a href="#">SUCURSALES</a>    </li>
+    <li><a ui-sref="menu.login">ZONA LOGIN</a></li>
+    <li><a href="http://www.jochaho.com/wordpress/about-pritesh-badge/">CONTACTENOS</a></li>
+    </ul>
+</nav>
+</div>
+<br>
+<br>
+<br>
+      <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/style.css">
+
+         <body class="collage none-bg">
+   </head>
+
+      <div id="header">
+            <h1 class="name-title">
+                ZONA DE LOGIN
+          </h1>
+         </div>
+    </body>
+</html>
+
+  <div ng-if= "tipologin != 'CLIENTE'">
+
+
+
+
+ 
+            <div class="container"  align= "center" name="divLogeo" id="divLogueo"  >
+
+    <form name="formIngreso" id="formIngreso" enctype="multipart/form-data" ng-submit="enviar" >
+
+        <br>
+        <br>
+         <p>
+        <input type="text" value="admin" placeholder="ingrese usuario" ng-model="usuario.nombre_usuario" required />
+        </p>
+         <p>
+        <input type="password" value="admin" placeholder="ingrese clave" ng-model="usuario.pass_usuario" required  />
+        </p>
+        <p>
+        <input type="submit" id="Ingreso" class="button" ng-Click="IniciarSeccion()" name="Ingreso" value="ingreso" />
+          <input type="submit" id="registro clientes" class="button" ng-Click="RegistroClientes()" name="Ingreso" value="Registro Clientes" />
+        </form>
+        <input type="submit"  class="button" ng-Click="Usuarios('ADMINISTRADOR')" name="USUARIOS" value="ADMINISTRADOR" />
+        <input type="submit"  class="button" ng-Click="Usuarios('CLIENTE')" name="USUARIOS" value="CLIENTE" />
+             <input type="submit"  class="button" ng-Click="Usuarios('EMPLEADO')" name="USUARIOS" value="EMPLEADO" />
+                          <input type="submit"  class="button" ng-Click="Usuarios('ENCARGADO')" name="USUARIOS" value="ENCARGADO" />
+
+   </div>
+
+</body>

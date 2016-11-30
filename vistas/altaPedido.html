@@ -1,0 +1,97 @@
+
+  <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/style_login.css">
+
+<div ng-if="user.rol == 'EMPLEADO'">
+<nav class="dropdownmenu">
+  <ul>
+     <li><a ui-sref="inicio">INICIO</a></li>
+    <li><a ui-sref="menu.Registro">ALTAS CLIENTES</a></li>
+    <li><a ui-sref="menu.AltaProducto">ALTA PRODUCTOS</a></li>
+    <li><a ui-sref="menu.AltaPromocion">ALTA PROMOCION</a></li>
+    <li><a ui-sref="menu.altaPedidos">ALTA PEDIDOS</a></li>
+    <li><a ui-sref="menu.Grillas">GRILLA CLIENTES </a></li>
+    <li><a ui-sref="menu.grillaPedidos" >GRILLA PEDIDOS</a></li>
+    <li><a ng-Click="Deslogueo()">DESLOGUEARSE</a></li>
+  </ul>
+</nav>
+</div>
+
+<div ng-if="user.rol == 'CLIENTE'">
+<nav class="dropdownmenu">
+  <ul>
+  <li><a ui-sref="inicio">INICIO</a></li>
+    <li><a ui-sref="menu.GrillaLocal">LOCALES</a></li>
+    <li><a ui-sref="menu.GrillaPromociones">PROMOCIONES</a>    </li>
+    <li><a ui-sref="menu.altaPedidos" >PEDIDOS</a></li>
+           <li><a ng-Click="Deslogueo()">DESLOGUEO</a></li>
+  </ul>
+</nav>
+</div>
+
+
+<div ng-if="user.rol == 'ENCARGADO'" >
+<nav class="dropdownmenu">
+  <ul>
+       <li><a ui-sref="inicio">INICIO</a></li>
+    <li><a ui-sref="menu.Registro">ALTAS CLIENTES Y EMPLEADOS</a></li>
+    <li><a ui-sref="menu.AltaProducto">ALTA PRODUCTOS</a></li>
+    <li><a ui-sref="menu.AltaPromocion">ALTA PROMOCION</a></li>
+    <li><a ui-sref="menu.altaPedidos">ALTA PEDIDOS</a></li>
+    <li><a ui-sref="menu.Grillas">GRILLA CLIENTES EMPLEADOS</a></li>
+    <li><a ng-Click="Deslogueo()">DESLOGUEARSE</a></li>
+
+</div>
+
+
+<br>
+<br>
+<br>
+ <body class="collage none-bg">
+   </head>
+
+      <div id="header">
+            <h1 class="name-title">
+            ALTA PEDIDO
+          </h1>
+         </div>
+</body>
+</html>
+
+     <div class="container"  align= "center" name="divLogeo" id="divLogueo"  >
+
+    <form name="formIngreso" id="formIngreso" enctype="multipart/form-data" ng-submit="enviar" >
+
+    <div id="header">
+          
+          <form id="FormIngreso" name="FormIngreso" enctype="multipart/form-data">
+            <select ng-model="objeSeleccionadoUser" ng-options="pizza as pizza.nombre_usuario for pizza in listaclientes track by pizza.id_usuario">
+        <option value="">* Elige Usuario *</option>
+      </select>
+            <select ng-model="objeSeleccionadoPizza" ng-options="pizza as pizza.descripcion_pizza for pizza in listapizzas track by pizza.id_pizza">
+        <option value="">* Elige Una Pizza *</option>
+      </select>
+            <select ng-model="objeSeleccionadoLocal" ng-options="pizza as pizza.nombre_local for pizza in listalocales track by pizza.id_local">
+        <option value="">* Elige Un Local *</option>
+      </select>
+            <input type="number" min="0" name="nombre" ng-model="pizza.cantidad_pizza" placeholder="Ingrese Cantidad" required/>
+            <input type="date" name="nombre" ng-model="pizza.fecha_entrega" placeholder="Ingrese Fecha del pedido" required/>
+           
+        
+        
+
+       <button  name="guardar" ng-disabled="FormIngreso.$invalid"  ng-click="Guardar()" ></span>Guardar</a> 
+          
+        <input type="hidden" value="" id="idParaModificar" name="agregar" />
+        <input type="hidden" value="" id="hdnAgregar" name="agregar" />
+        </div>
+
+      </form>  
+        
+          
+       
+
+        </div>
+      
+
+</body>

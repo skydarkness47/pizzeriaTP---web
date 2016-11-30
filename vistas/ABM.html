@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_login.css">
+<nav class="dropdownmenu">
+   <ul>
+      <li><a ui-sref="inicio">INICIO</a></li>
+    <li><a ui-sref="menu.ABM">ALTAS USUARIOS</a></li>
+    <li><a ui-sref="menu.AltaLocal">ALTA LOCAL</a></li>
+    <li><a ui-sref="menu.Grillas">GRILLAS USUARIOS</a></li>
+     <li><a ui-sref="menu.GrillaLocal" >GRILLA LOCALES</a></li>
+     <li><a ng-Click="Deslogueo()">DESLOGUEARSE</a></li>
+</nav>
+</div>
+<br>
+<br>
+<br>
+<link rel="stylesheet" href="css/style_login.css">
+<link rel="stylesheet" href="css/style.css">
+<body class="collage none-bg">
+   </head>
+   <div id="header">
+      <h1 class="name-title">
+         ABM
+      </h1>
+   </div>
+</body>
+</html>
+
+<div class="container"  align= "center" name="divLogeo" id="divLogueo"  >
+<form name="formIngreso" id="formIngreso" enctype="multipart/form-data" ng-submit="enviar" >
+<div id="header">
+
+<div>
+   <input type="text" value="" placeholder="ingrese el usuario" ng-model="usuario.nombre_usuario" required />
+    <br>
+     <br>
+      <input type="text" value="" placeholder="ingrese la clave" ng-model="usuario.pass_usuario" required />
+
+   <h1>seleccione tipo de alta</h1>
+   <select name="multipleSelect"  ng-model="tipologin" value="hola">
+<option value="">* Elige Una tipo *</option>
+      <option ng-model="cliente" >CLIENTE</option>
+      <option ng-model="engargado">ENGARCADO</option>
+      <option ng-model="emple">EMPLEADO</option>
+   </select>
+   <br>
+   <button  name="guardar" ng-disabled="FormIngreso.$invalid"  ng-click="Guardar()" ></span>Guardar</a> 
+</div>
+
+
+</form>
+
+</body>
